@@ -13,7 +13,7 @@ import Form from "./Form";
 const Table: React.FC = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState<User[]>([]);
-  console.log("users", users?.length);
+  // console.log("users", users?.length);
   const [tableStatus, setTableStatus] = useState<TableStatus>({
     page: 1,
     size: 10,
@@ -36,7 +36,7 @@ const Table: React.FC = () => {
 
   useEffect(() => {
     navigate(
-      `api/v1/users?page=${tableStatus?.page}&size=${tableStatus?.size}`
+      `https://crud-backend-delta.vercel.app/api/v1/users?page=${tableStatus?.page}&size=${tableStatus?.size}`
     );
 
     fetch(
