@@ -36,7 +36,7 @@ const Table: React.FC = () => {
 
   useEffect(() => {
     navigate(
-      `https://crud-backend-delta.vercel.app/api/v1/users?page=${tableStatus?.page}&size=${tableStatus?.size}`
+      `/api/v1/users?page=${tableStatus?.page}&size=${tableStatus?.size}`
     );
 
     fetch(
