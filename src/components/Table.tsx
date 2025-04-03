@@ -40,7 +40,8 @@ const Table: React.FC = () => {
     );
 
     fetch(
-      `http://localhost:8080/api/v1/users?page=${tableStatus?.page}&size=${tableStatus?.size}`
+      // `http://localhost:8080/api/v1/users?page=${tableStatus?.page}&size=${tableStatus?.size}`
+      `https://crud-backend-delta.vercel.app/api/v1/users?page=${tableStatus?.page}&size=${tableStatus?.size}`
     )
       .then((res) => res.json())
       .then((data) => setUsers(data?.data))
