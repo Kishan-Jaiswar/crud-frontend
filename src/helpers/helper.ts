@@ -44,13 +44,16 @@ export const handleSubmit = (
 ) => {
   console.log("form", formData);
   e.preventDefault();
-  fetch(`http://localhost:8080/api/v1/users`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
+  fetch(
+    /* `http://localhost:8080/api/v1/users` */ `https://crud-backend-delta.vercel.app/api/v1/users`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       setCreatedDataStatus(data?.status);
@@ -101,7 +104,7 @@ export const handleUpdateSubmit = (
 ) => {
   console.log("formData", formData);
   e.preventDefault();
-  fetch(`http://localhost:8080/api/v1/users/${userId}`, {
+  fetch(`https://crud-backend-delta.vercel.app/api/v1/users/${userId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -135,7 +138,7 @@ export const handleDelete = (
   );
   if (!confirmDelete) return;
 
-  fetch(`http://localhost:8080/api/v1/users/${_id}`, {
+  fetch(`https://crud-backend-delta.vercel.app/api/v1/users/${_id}`, {
     method: "DELETE",
   });
 
